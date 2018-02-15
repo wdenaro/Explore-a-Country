@@ -1,0 +1,24 @@
+<div *ngIf="fullCountry">
+	<h2>{{ fullCountry.name }}</h2>
+	<p>Subregion: {{ fullCountry.subregion }}</p>
+	<p>Capital: {{ fullCountry.capital }}</p>
+	<p>Population: {{ fullCountry.population | number}}</p>
+	<p>Area: {{ fullCountry.area | number }}</p>
+	<img src="{{ fullCountry.flag }}" style="width: 200px; height: auto;">
+
+	<div *ngIf="fullCountry.borders.length;then has_borders else no_borders"></div>
+
+	<ng-template #has_borders>
+		<p>Borders <b>{{ fullCountry.borders.length }}</b> <span *ngIf="fullCountry.borders.length>=2">countries</span><span *ngIf="fullCountry.borders.length===1">country</span>:</p>
+		<ul>
+			<li *ngFor="let country of fullCountry.borders"><a routerLink="/country/{{ country }}/">{{ country }}</a></li>
+		</ul>
+	</ng-template>
+
+	<ng-template #no_borders>
+		<p>Has no bordering countries.</p>
+	</ng-template>
+
+</div>
+
+<p *ngIf="fullCountry"><a routerLink="/choose/{{ fullCountry.alpha3Code }}">Return to Country Chooser</a></p>

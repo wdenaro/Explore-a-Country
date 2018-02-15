@@ -1,0 +1,7 @@
+<div *ngIf="countries">
+	<p>Select one of the {{ countries.length }} countries from the drop-down below<br>to view some interesting facts and information.</p>
+	<select (change)="onSelect($event)">
+		<option class="placeholder" disabled value="">Select a country</option>
+		<option *ngFor="let country of countries"  [selected]="country.alpha3Code == alpha ? true : null" value="{{ country.alpha3Code }}">{{ country.name }}</option>
+	</select>
+</div>
