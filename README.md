@@ -2,7 +2,7 @@
 
 ## Code exercise by Wesley Denaro
 
-
+LIVE location: http://denaro.com/projects/angular/explore-a-country/choose
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.7.
 
