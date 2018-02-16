@@ -28,9 +28,9 @@ export class CountryChooserComponent implements OnInit {
       .subscribe(shortCountry => this.countries = shortCountry);
   }
 
-	onSelect(event): void {
+  onSelect(event): void {
     this.router.navigate(['country/' + event.target.value]);
-	}
+  }
 
 
 }
