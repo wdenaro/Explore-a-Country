@@ -12,7 +12,7 @@ import { FullCountryGetter } from '../full-country-getter.service';
 })
 export class CountryDetailComponent implements OnInit {
 
-  fullCountry: FullCountry;
+  public fullCountry: FullCountry;
 
   constructor(
     private router: Router,
@@ -22,17 +22,11 @@ export class CountryDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-  	this.getCountryInfo();
-
     this.route.params.subscribe(params => {
-      this.getCountryInfo();
+      const alpha = this.route.snapshot.paramMap.get('alpha');
+      this.fullCountryGetter.getCountryInfo(alpha)
+        .subscribe(fullCountry => this.fullCountry = fullCountry);
     });
-  }
-
-  getCountryInfo(): void {
-    const alpha = this.route.snapshot.paramMap.get('alpha');
-  	this.fullCountryGetter.getCountryInfo(alpha)
-  	  .subscribe(fullCountry => this.fullCountry = fullCountry);
   }
 
 }

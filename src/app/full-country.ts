@@ -4,7 +4,7 @@
 		https://restcountries.eu/rest/v2/alpha/AND?fields=alpha3Code;name;capital;subregion;population;area;borders;flag;
 */ 
 
-export class FullCountry {
+export interface FullCountry {
 	alpha3Code: string;
 	name: string;
 	capital: string;

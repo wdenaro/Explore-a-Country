@@ -4,7 +4,7 @@
 		https://restcountries.eu/rest/v2/all?fields=alpha3Code;name;
 */ 
 
-export class ShortCountry {
+export interface ShortCountry {
 	alpha3Code: string;
 	name: string;
 }

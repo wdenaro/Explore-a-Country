@@ -12,10 +12,8 @@ import { ShortCountryGetter } from '../short-country-getter.service';
 })
 export class CountryChooserComponent implements OnInit {
 
-  countries: ShortCountry;
-  event = true;
-  countryCode = false;
-  alpha = this.route.snapshot.paramMap.get('alpha');
+  public countries: ShortCountry;
+  public alpha: string;
 
   constructor(
     private router: Router,
@@ -25,18 +23,13 @@ export class CountryChooserComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getCountryInfo();
-  }
-
-  getCountryInfo(): void {
+    this.alpha = this.route.snapshot.paramMap.get('alpha');
     this.shortCountryGetter.getCountryInfo()
       .subscribe(shortCountry => this.countries = shortCountry);
   }
 
 	onSelect(event): void {
-		this.event = event;
-    this.countryCode = event.target.value;
-    this.router.navigate(['country/' +this.countryCode]);
+    this.router.navigate(['country/' + event.target.value]);
 	}
 
 

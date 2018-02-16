@@ -20,7 +20,7 @@ export class FullCountryGetter {
   	//console.log(alpha);
   	//return of(FULLCOUNTRY);
 
-  	const url = 'https://restcountries.eu/rest/v2/alpha/' +alpha+ '?fields=alpha3Code;name;capital;subregion;population;area;borders;flag;';
+  	const url = 'https://restcountries.eu/rest/v2/alpha/' + alpha + '?fields=alpha3Code;name;capital;subregion;population;area;borders;flag;';
   	return this.http.get<FullCountry>(url).pipe(
   		//tap(_ => console.log(`fetched country alpha=${alpha}`)),
   		catchError(this.handleError<FullCountry>(`getCountryInfo alpha=${alpha}`))

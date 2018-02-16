@@ -9,7 +9,7 @@ import { CountryDetailComponent } from './country-detail/country-detail.componen
 import { ShortCountryGetter } from './short-country-getter.service';
 import { FullCountryGetter } from './full-country-getter.service';
 
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
