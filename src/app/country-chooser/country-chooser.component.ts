@@ -11,7 +11,6 @@ import { ShortCountryGetter } from '../short-country-getter.service';
   styleUrls: ['./country-chooser.component.scss']
 })
 export class CountryChooserComponent implements OnInit {
-
   public countries: ShortCountry;
   public alpha: string;
 
@@ -31,6 +30,5 @@ export class CountryChooserComponent implements OnInit {
   onSelect(event): void {
     this.router.navigate(['country/' + event.target.value]);
   }
-
 
 }

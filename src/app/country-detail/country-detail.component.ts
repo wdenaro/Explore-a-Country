@@ -11,7 +11,6 @@ import { FullCountryGetter } from '../full-country-getter.service';
   styleUrls: ['./country-detail.component.scss']
 })
 export class CountryDetailComponent implements OnInit {
-
   public fullCountry: FullCountry;
 
   constructor(
